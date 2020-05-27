@@ -1,0 +1,32 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusEndereco": {
+      "home": {
+        "title": "Enderecos",
+        "createLabel": "Créer un nouveau Endereco",
+        "createOrEditLabel": "Créer ou éditer un Endereco",
+        "notFound": "Aucun Endereco trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Endereco {{ id }} ?"
+      },
+      "detail": {
+        "title": "Endereco"
+      },
+      "bairro": "Bairro",
+      "rua": "Rua",
+      "numero": "Numero",
+      "cep": "Cep",
+      "pais": "Pais",
+      "uf": "Uf",
+      "cidade": "Cidade"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusEndereco": {
+      "created": "Un nouveau Endereco a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Endereco avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Endereco avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

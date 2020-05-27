@@ -1,0 +1,26 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusTipoUsuario": {
+      "home": {
+        "title": "TipoUsuarios",
+        "createLabel": "Créer un nouveau Tipo Usuario",
+        "createOrEditLabel": "Créer ou éditer un Tipo Usuario",
+        "notFound": "Aucun Tipo Usuario trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Tipo Usuario {{ id }} ?"
+      },
+      "detail": {
+        "title": "Tipo Usuario"
+      },
+      "descricao": "Descricao"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusTipoUsuario": {
+      "created": "Un nouveau Tipo Usuario a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Tipo Usuario avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Tipo Usuario avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

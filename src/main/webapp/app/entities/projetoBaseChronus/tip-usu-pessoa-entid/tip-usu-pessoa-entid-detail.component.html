@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tipUsuPessoaEntid">
+            <h2><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusTipUsuPessoaEntid.detail.title">Tip Usu Pessoa Entid</span> {{ tipUsuPessoaEntid.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusTipUsuPessoaEntid.pessoa">Pessoa</span></dt>
+                <dd>
+                    <div *ngIf="tipUsuPessoaEntid.pessoaId">
+                        <a [routerLink]="['/pessoa', tipUsuPessoaEntid.pessoaId, 'view']">{{ tipUsuPessoaEntid.pessoaId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusTipUsuPessoaEntid.entidade">Entidade</span></dt>
+                <dd>
+                    <div *ngIf="tipUsuPessoaEntid.entidadeId">
+                        <a [routerLink]="['/entidade', tipUsuPessoaEntid.entidadeId, 'view']">{{ tipUsuPessoaEntid.entidadeId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusTipUsuPessoaEntid.tipoUsuario">Tipo Usuario</span></dt>
+                <dd>
+                    <div *ngIf="tipUsuPessoaEntid.tipoUsuarioId">
+                        <a [routerLink]="['/tipo-usuario', tipUsuPessoaEntid.tipoUsuarioId, 'view']">{{ tipUsuPessoaEntid.tipoUsuarioId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tip-usu-pessoa-entid', tipUsuPessoaEntid.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

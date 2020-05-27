@@ -1,0 +1,10 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "Genero": {
+      "null": "",
+      "HOMEM": "HOMEM",
+      "MULHER": "MULHER",
+      "OUTROS": "OUTROS"
+    }
+  }
+}

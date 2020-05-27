@@ -1,0 +1,10 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "EstadoCivil": {
+      "null": "",
+      "CASADO": "CASADO",
+      "SOLTEIRO": "SOLTEIRO",
+      "OUTROS": "OUTROS"
+    }
+  }
+}

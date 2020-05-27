@@ -1,0 +1,28 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusTipUsuPessoaEntid": {
+      "home": {
+        "title": "TipUsuPessoaEntids",
+        "createLabel": "Créer un nouveau Tip Usu Pessoa Entid",
+        "createOrEditLabel": "Créer ou éditer un Tip Usu Pessoa Entid",
+        "notFound": "Aucun Tip Usu Pessoa Entid trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Tip Usu Pessoa Entid {{ id }} ?"
+      },
+      "detail": {
+        "title": "Tip Usu Pessoa Entid"
+      },
+      "pessoa": "Pessoa",
+      "entidade": "Entidade",
+      "tipoUsuario": "Tipo Usuario"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusTipUsuPessoaEntid": {
+      "created": "Un nouveau Tip Usu Pessoa Entid a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Tip Usu Pessoa Entid avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Tip Usu Pessoa Entid avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "TipoUnidade": {
+      "null": "",
+      "PUBLICA": "PUBLICA",
+      "PRIVADA": "PRIVADA"
+    }
+  }
+}

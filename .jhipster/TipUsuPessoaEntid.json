@@ -1,0 +1,40 @@
+{
+  "name": "TipUsuPessoaEntid",
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "Pessoa",
+      "otherEntityRelationshipName": "TipUsuPessoaEntid",
+      "relationshipValidateRules": "required",
+      "relationshipName": "pessoa",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "Entidade",
+      "otherEntityRelationshipName": "TipUsuPessoaEntid",
+      "relationshipValidateRules": "required",
+      "relationshipName": "entidade",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "TipoUsuario",
+      "otherEntityRelationshipName": "TipUsuPessoaEntid",
+      "relationshipName": "tipoUsuario",
+      "otherEntityField": "id"
+    }
+  ],
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "icid_tip_usu_pessoa_entid",
+  "databaseType": "mongodb",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination",
+  "clientRootFolder": "projetoBaseChronus",
+  "applications": ["projetoBaseChronus"],
+  "microserviceName": "projetoBaseChronus",
+  "fluentMethods": false
+}

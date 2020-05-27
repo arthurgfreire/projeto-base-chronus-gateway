@@ -1,0 +1,29 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusUnidadeAtendimento": {
+      "home": {
+        "title": "UnidadeAtendimentos",
+        "createLabel": "Créer un nouveau Unidade Atendimento",
+        "createOrEditLabel": "Créer ou éditer un Unidade Atendimento",
+        "notFound": "Aucun Unidade Atendimento trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Unidade Atendimento {{ id }} ?"
+      },
+      "detail": {
+        "title": "Unidade Atendimento"
+      },
+      "razaoSocial": "Razao Social",
+      "nomeFantasia": "Nome Fantasia",
+      "endereco": "Endereco",
+      "entidade": "Entidade"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusUnidadeAtendimento": {
+      "created": "Un nouveau Unidade Atendimento a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Unidade Atendimento avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Unidade Atendimento avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

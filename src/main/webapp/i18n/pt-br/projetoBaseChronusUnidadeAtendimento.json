@@ -1,0 +1,29 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusUnidadeAtendimento": {
+      "home": {
+        "title": "Unidade Atendimentos",
+        "createLabel": "Criar novo Unidade Atendimento",
+        "createOrEditLabel": "Criar ou editar Unidade Atendimento",
+        "notFound": "Nenhum Unidade Atendimento encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Unidade Atendimento {{ id }}?"
+      },
+      "detail": {
+        "title": "Unidade Atendimento"
+      },
+      "razaoSocial": "Razao Social",
+      "nomeFantasia": "Nome Fantasia",
+      "endereco": "Endereco",
+      "entidade": "Entidade"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusUnidadeAtendimento": {
+      "created": "Um novo Unidade Atendimento foi criado com o identificador {{ param }}",
+      "updated": "Um Unidade Atendimento foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Unidade Atendimento foi excluído com o identificador {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusUf": {
+      "home": {
+        "title": "Ufs",
+        "createLabel": "Criar novo Uf",
+        "createOrEditLabel": "Criar ou editar Uf",
+        "notFound": "Nenhum Uf encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Uf {{ id }}?"
+      },
+      "detail": {
+        "title": "Uf"
+      },
+      "descricao": "Descricao",
+      "pais": "Pais"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusUf": {
+      "created": "Um novo Uf foi criado com o identificador {{ param }}",
+      "updated": "Um Uf foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Uf foi excluído com o identificador {{ param }}"
+    }
+  }
+}

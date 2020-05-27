@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="unidadeAtendimento">
+            <h2><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusUnidadeAtendimento.detail.title">Unidade Atendimento</span> {{ unidadeAtendimento.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusUnidadeAtendimento.razaoSocial">Razao Social</span></dt>
+                <dd>
+                    <span>{{ unidadeAtendimento.razaoSocial }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusUnidadeAtendimento.nomeFantasia">Nome Fantasia</span></dt>
+                <dd>
+                    <span>{{ unidadeAtendimento.nomeFantasia }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusUnidadeAtendimento.endereco">Endereco</span></dt>
+                <dd>
+                    <div *ngIf="unidadeAtendimento.enderecoId">
+                        <a [routerLink]="['/endereco', unidadeAtendimento.enderecoId, 'view']">{{ unidadeAtendimento.enderecoId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusUnidadeAtendimento.entidade">Entidade</span></dt>
+                <dd>
+                    <div *ngIf="unidadeAtendimento.entidadeId">
+                        <a [routerLink]="['/entidade', unidadeAtendimento.entidadeId, 'view']">{{ unidadeAtendimento.entidadeId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/unidade-atendimento', unidadeAtendimento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

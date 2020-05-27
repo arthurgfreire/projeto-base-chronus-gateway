@@ -1,0 +1,26 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusRaca": {
+      "home": {
+        "title": "Racas",
+        "createLabel": "Crear nuevo Raca",
+        "createOrEditLabel": "Crear o editar Raca",
+        "notFound": "Ningún Racas encontrado"
+      },
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Raca {{ id }}?"
+      },
+      "detail": {
+        "title": "Raca"
+      },
+      "descricao": "Descricao"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusRaca": {
+      "created": "Un nuevo Raca ha sido creado con el identificador {{ param }}",
+      "updated": "Un Raca ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Raca ha sido eliminado con el identificador {{ param }}"
+    }
+  }
+}

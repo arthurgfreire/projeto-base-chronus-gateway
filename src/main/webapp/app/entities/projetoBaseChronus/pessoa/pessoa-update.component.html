@@ -1,0 +1,230 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pessoa-heading" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.home.createOrEditLabel">Create or edit a Pessoa</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.foto" for="field_foto">Foto</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('fotoContentType')!.value + ';base64,' + editForm.get('foto')!.value" style="max-height: 100px;" *ngIf="editForm.get('foto')!.value" alt="pessoa image"/>
+                        <div *ngIf="editForm.get('foto')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('fotoContentType')!.value }}, {{ byteSize(editForm.get('foto')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('foto', 'fotoContentType', 'file_foto')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_foto" (change)="setFileData($event, 'foto', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="foto" id="field_foto"
+                           formControlName="foto"/>
+                    <input type="hidden" class="form-control" name="fotoContentType" id="field_fotoContentType"
+                           formControlName="fotoContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                    <div *ngIf="editForm.get('nome')!.invalid && (editForm.get('nome')!.dirty || editForm.get('nome')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nome')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.cpf" for="field_cpf">Cpf</label>
+                    <input type="text" class="form-control" name="cpf" id="field_cpf"
+                           formControlName="cpf"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.rg" for="field_rg">Rg</label>
+                    <input type="text" class="form-control" name="rg" id="field_rg"
+                           formControlName="rg"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.cnh" for="field_cnh">Cnh</label>
+                    <input type="text" class="form-control" name="cnh" id="field_cnh"
+                           formControlName="cnh"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.passaporte" for="field_passaporte">Passaporte</label>
+                    <input type="text" class="form-control" name="passaporte" id="field_passaporte"
+                           formControlName="passaporte"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.certidaoNascimento" for="field_certidaoNascimento">Certidao Nascimento</label>
+                    <input type="text" class="form-control" name="certidaoNascimento" id="field_certidaoNascimento"
+                           formControlName="certidaoNascimento"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.estrangeiro" for="field_estrangeiro">Estrangeiro</label>
+                    <input type="checkbox" class="form-control" name="estrangeiro" id="field_estrangeiro"
+                           formControlName="estrangeiro"/>
+                    <div *ngIf="editForm.get('estrangeiro')!.invalid && (editForm.get('estrangeiro')!.dirty || editForm.get('estrangeiro')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('estrangeiro')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.MoraOutrasPessoas" for="field_MoraOutrasPessoas">Mora Outras Pessoas</label>
+                    <input type="checkbox" class="form-control" name="MoraOutrasPessoas" id="field_MoraOutrasPessoas"
+                           formControlName="MoraOutrasPessoas"/>
+                    <div *ngIf="editForm.get('MoraOutrasPessoas')!.invalid && (editForm.get('MoraOutrasPessoas')!.dirty || editForm.get('MoraOutrasPessoas')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('MoraOutrasPessoas')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.telefone" for="field_telefone">Telefone</label>
+                    <input type="text" class="form-control" name="telefone" id="field_telefone"
+                           formControlName="telefone"/>
+                    <div *ngIf="editForm.get('telefone')!.invalid && (editForm.get('telefone')!.dirty || editForm.get('telefone')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('telefone')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('telefone')?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Telefone' }">
+                            This field should follow pattern for "Telefone".
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                    <div *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty || editForm.get('email')!.touched)">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.temFilhos" for="field_temFilhos">Tem Filhos</label>
+                    <input type="checkbox" class="form-control" name="temFilhos" id="field_temFilhos"
+                           formControlName="temFilhos"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.quantFilhos" for="field_quantFilhos">Quant Filhos</label>
+                    <input type="number" class="form-control" name="quantFilhos" id="field_quantFilhos"
+                           formControlName="quantFilhos"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.genero" for="field_genero">Genero</label>
+                    <select class="form-control" name="genero" formControlName="genero" id="field_genero">
+                        <option value="HOMEM">{{ 'projetoBaseChronusGatewayApp.Genero.HOMEM' | translate }}</option>
+                        <option value="MULHER">{{ 'projetoBaseChronusGatewayApp.Genero.MULHER' | translate }}</option>
+                        <option value="OUTROS">{{ 'projetoBaseChronusGatewayApp.Genero.OUTROS' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('genero')!.invalid && (editForm.get('genero')!.dirty || editForm.get('genero')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('genero')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.estadoCivil" for="field_estadoCivil">Estado Civil</label>
+                    <select class="form-control" name="estadoCivil" formControlName="estadoCivil" id="field_estadoCivil">
+                        <option value="CASADO">{{ 'projetoBaseChronusGatewayApp.EstadoCivil.CASADO' | translate }}</option>
+                        <option value="SOLTEIRO">{{ 'projetoBaseChronusGatewayApp.EstadoCivil.SOLTEIRO' | translate }}</option>
+                        <option value="OUTROS">{{ 'projetoBaseChronusGatewayApp.EstadoCivil.OUTROS' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('estadoCivil')!.invalid && (editForm.get('estadoCivil')!.dirty || editForm.get('estadoCivil')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('estadoCivil')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.dataExpiracao" for="field_dataExpiracao">Data Expiracao</label>
+                    <div class="input-group">
+                        <input id="field_dataExpiracao" type="text" class="form-control" name="dataExpiracao" ngbDatepicker #dataExpiracaoDp="ngbDatepicker" formControlName="dataExpiracao"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataExpiracaoDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.endereco" for="field_endereco">Endereco</label>
+                    <select class="form-control" id="field_endereco" name="endereco" formControlName="enderecoId">
+                        <option *ngIf="!editForm.get('enderecoId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="EnderecoOption.id" *ngFor="let EnderecoOption of enderecos; trackBy: trackById">{{ EnderecoOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('enderecoId')!.invalid && (editForm.get('enderecoId')!.dirty || editForm.get('enderecoId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('enderecoId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.raca" for="field_raca">Raca</label>
+                    <select class="form-control" id="field_raca" name="raca" formControlName="racaId">
+                        <option *ngIf="!editForm.get('racaId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="RacaOption.id" *ngFor="let RacaOption of racas; trackBy: trackById">{{ RacaOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('racaId')!.invalid && (editForm.get('racaId')!.dirty || editForm.get('racaId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('racaId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.tipoSanguineo" for="field_tipoSanguineo">Tipo Sanguineo</label>
+                    <select class="form-control" id="field_tipoSanguineo" name="tipoSanguineo" formControlName="tipoSanguineoId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="TipoSanguineoOption.id" *ngFor="let TipoSanguineoOption of tiposanguineos; trackBy: trackById">{{ TipoSanguineoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.classificacaoUsuario" for="field_classificacaoUsuario">Classificacao Usuario</label>
+                    <select class="form-control" id="field_classificacaoUsuario" name="classificacaoUsuario" formControlName="classificacaoUsuarioId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="ClassificacaoUsuarioOption.id" *ngFor="let ClassificacaoUsuarioOption of classificacaousuarios; trackBy: trackById">{{ ClassificacaoUsuarioOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

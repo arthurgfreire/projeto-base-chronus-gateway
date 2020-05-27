@@ -1,0 +1,31 @@
+{
+  "name": "Cidade",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "Uf",
+      "otherEntityRelationshipName": "Cidade",
+      "relationshipValidateRules": "required",
+      "relationshipName": "uf",
+      "otherEntityField": "id"
+    }
+  ],
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "icid_cidade",
+  "databaseType": "mongodb",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "pagination",
+  "clientRootFolder": "projetoBaseChronus",
+  "applications": ["projetoBaseChronus"],
+  "microserviceName": "projetoBaseChronus",
+  "fluentMethods": false
+}

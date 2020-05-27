@@ -1,0 +1,32 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusEndereco": {
+      "home": {
+        "title": "Enderecos",
+        "createLabel": "Criar novo Endereco",
+        "createOrEditLabel": "Criar ou editar Endereco",
+        "notFound": "Nenhum Endereco encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Endereco {{ id }}?"
+      },
+      "detail": {
+        "title": "Endereco"
+      },
+      "bairro": "Bairro",
+      "rua": "Rua",
+      "numero": "Numero",
+      "cep": "Cep",
+      "pais": "Pais",
+      "uf": "Uf",
+      "cidade": "Cidade"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusEndereco": {
+      "created": "Um novo Endereco foi criado com o identificador {{ param }}",
+      "updated": "Um Endereco foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Endereco foi excluído com o identificador {{ param }}"
+    }
+  }
+}

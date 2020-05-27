@@ -1,0 +1,25 @@
+{
+  "name": "ClassificacaoUsuario",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cor",
+      "fieldType": "String"
+    }
+  ],
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "icid_classif_usuario",
+  "databaseType": "mongodb",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "pagination",
+  "clientRootFolder": "projetoBaseChronus",
+  "applications": ["projetoBaseChronus"],
+  "microserviceName": "projetoBaseChronus",
+  "fluentMethods": false
+}

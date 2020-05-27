@@ -1,0 +1,26 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusPais": {
+      "home": {
+        "title": "Pais",
+        "createLabel": "Crear nuevo Pais",
+        "createOrEditLabel": "Crear o editar Pais",
+        "notFound": "Ningún Pais encontrado"
+      },
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Pais {{ id }}?"
+      },
+      "detail": {
+        "title": "Pais"
+      },
+      "descricao": "Descricao"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusPais": {
+      "created": "Un nuevo Pais ha sido creado con el identificador {{ param }}",
+      "updated": "Un Pais ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Pais ha sido eliminado con el identificador {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "TipoLicneca": {
+      "null": "",
+      "GOV": "GOV",
+      "PRIVADA": "PRIVADA",
+      "SCANNER": "SCANNER"
+    }
+  }
+}

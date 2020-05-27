@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.home.title">Entidades</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-entidade" [routerLink]="['/entidade/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.home.createLabel">
+            Create a new Entidade
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="entidades?.length === 0">
+        <span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.home.notFound">No entidades found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="entidades && entidades.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tipoCadastro"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.tipoCadastro">Tipo Cadastro</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tipoUnidade"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.tipoUnidade">Tipo Unidade</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="razaoSocial"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.razaoSocial">Razao Social</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nomeFantasia"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.nomeFantasia">Nome Fantasia</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cnpj"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.cnpj">Cnpj</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="inscricaoEstadual"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.inscricaoEstadual">Inscricao Estadual</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="inscricaoMunicipal"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.inscricaoMunicipal">Inscricao Municipal</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telefone"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.telefone">Telefone</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tipoLicneca"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.tipoLicneca">Tipo Licneca</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="quantLicencas"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.quantLicencas">Quant Licencas</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="enderecoId"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.endereco">Endereco</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let entidade of entidades ;trackBy: trackId">
+                    <td><a [routerLink]="['/entidade', entidade.id, 'view']">{{ entidade.id }}</a></td>
+                    <td jhiTranslate="{{ 'projetoBaseChronusGatewayApp.TipoCadastro.' + entidade.tipoCadastro }}">{{ entidade.tipoCadastro }}</td>
+                    <td jhiTranslate="{{ 'projetoBaseChronusGatewayApp.TipoUnidade.' + entidade.tipoUnidade }}">{{ entidade.tipoUnidade }}</td>
+                    <td>{{ entidade.razaoSocial }}</td>
+                    <td>{{ entidade.nomeFantasia }}</td>
+                    <td>{{ entidade.cnpj }}</td>
+                    <td>{{ entidade.inscricaoEstadual }}</td>
+                    <td>{{ entidade.inscricaoMunicipal }}</td>
+                    <td>{{ entidade.telefone }}</td>
+                    <td>{{ entidade.email }}</td>
+                    <td jhiTranslate="{{ 'projetoBaseChronusGatewayApp.TipoLicneca.' + entidade.tipoLicneca }}">{{ entidade.tipoLicneca }}</td>
+                    <td>{{ entidade.quantLicencas }}</td>
+                    <td>
+                        <div *ngIf="entidade.enderecoId">
+                            <a [routerLink]="['/endereco', entidade.enderecoId , 'view']" >{{ entidade.enderecoId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/entidade', entidade.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/entidade', entidade.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(entidade)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="entidades && entidades.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

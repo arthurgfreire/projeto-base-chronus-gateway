@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="entidade">
+            <h2><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.detail.title">Entidade</span> {{ entidade.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.tipoCadastro">Tipo Cadastro</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'projetoBaseChronusGatewayApp.TipoCadastro.' + entidade.tipoCadastro }}">{{ entidade.tipoCadastro }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.tipoUnidade">Tipo Unidade</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'projetoBaseChronusGatewayApp.TipoUnidade.' + entidade.tipoUnidade }}">{{ entidade.tipoUnidade }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.razaoSocial">Razao Social</span></dt>
+                <dd>
+                    <span>{{ entidade.razaoSocial }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.nomeFantasia">Nome Fantasia</span></dt>
+                <dd>
+                    <span>{{ entidade.nomeFantasia }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.cnpj">Cnpj</span></dt>
+                <dd>
+                    <span>{{ entidade.cnpj }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.inscricaoEstadual">Inscricao Estadual</span></dt>
+                <dd>
+                    <span>{{ entidade.inscricaoEstadual }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.inscricaoMunicipal">Inscricao Municipal</span></dt>
+                <dd>
+                    <span>{{ entidade.inscricaoMunicipal }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.telefone">Telefone</span></dt>
+                <dd>
+                    <span>{{ entidade.telefone }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.email">Email</span></dt>
+                <dd>
+                    <span>{{ entidade.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.tipoLicneca">Tipo Licneca</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'projetoBaseChronusGatewayApp.TipoLicneca.' + entidade.tipoLicneca }}">{{ entidade.tipoLicneca }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.quantLicencas">Quant Licencas</span></dt>
+                <dd>
+                    <span>{{ entidade.quantLicencas }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEntidade.endereco">Endereco</span></dt>
+                <dd>
+                    <div *ngIf="entidade.enderecoId">
+                        <a [routerLink]="['/endereco', entidade.enderecoId, 'view']">{{ entidade.enderecoId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/entidade', entidade.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

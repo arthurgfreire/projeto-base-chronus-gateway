@@ -1,0 +1,26 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusTipoSanguineo": {
+      "home": {
+        "title": "TipoSanguineos",
+        "createLabel": "Créer un nouveau Tipo Sanguineo",
+        "createOrEditLabel": "Créer ou éditer un Tipo Sanguineo",
+        "notFound": "Aucun Tipo Sanguineo trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Tipo Sanguineo {{ id }} ?"
+      },
+      "detail": {
+        "title": "Tipo Sanguineo"
+      },
+      "descricao": "Descricao"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusTipoSanguineo": {
+      "created": "Un nouveau Tipo Sanguineo a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Tipo Sanguineo avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Tipo Sanguineo avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

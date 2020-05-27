@@ -1,0 +1,130 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.home.title">Pessoas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pessoa" [routerLink]="['/pessoa/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.home.createLabel">
+            Create a new Pessoa
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="pessoas?.length === 0">
+        <span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.home.notFound">No pessoas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="pessoas && pessoas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="foto"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.foto">Foto</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nome"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.nome">Nome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cpf"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.cpf">Cpf</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="rg"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.rg">Rg</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cnh"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.cnh">Cnh</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="passaporte"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.passaporte">Passaporte</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="certidaoNascimento"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.certidaoNascimento">Certidao Nascimento</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="estrangeiro"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.estrangeiro">Estrangeiro</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="MoraOutrasPessoas"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.MoraOutrasPessoas">Mora Outras Pessoas</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telefone"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.telefone">Telefone</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="temFilhos"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.temFilhos">Tem Filhos</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="quantFilhos"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.quantFilhos">Quant Filhos</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="genero"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.genero">Genero</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="estadoCivil"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.estadoCivil">Estado Civil</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dataExpiracao"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.dataExpiracao">Data Expiracao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="enderecoId"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.endereco">Endereco</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="racaId"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.raca">Raca</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tipoSanguineoId"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.tipoSanguineo">Tipo Sanguineo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="classificacaoUsuarioId"><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.classificacaoUsuario">Classificacao Usuario</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pessoa of pessoas ;trackBy: trackId">
+                    <td><a [routerLink]="['/pessoa', pessoa.id, 'view']">{{ pessoa.id }}</a></td>
+                    <td>
+                        <a *ngIf="pessoa.foto" (click)="openFile(pessoa.fotoContentType, pessoa.foto)">
+                            <img [src]="'data:' + pessoa.fotoContentType + ';base64,' + pessoa.foto" style="max-height: 30px;" alt="pessoa image"/>
+                        </a>
+                        <span *ngIf="pessoa.foto">{{ pessoa.fotoContentType }}, {{ byteSize(pessoa.foto) }}</span>
+                    </td>
+                    <td>{{ pessoa.nome }}</td>
+                    <td>{{ pessoa.cpf }}</td>
+                    <td>{{ pessoa.rg }}</td>
+                    <td>{{ pessoa.cnh }}</td>
+                    <td>{{ pessoa.passaporte }}</td>
+                    <td>{{ pessoa.certidaoNascimento }}</td>
+                    <td>{{ pessoa.estrangeiro }}</td>
+                    <td>{{ pessoa.MoraOutrasPessoas }}</td>
+                    <td>{{ pessoa.telefone }}</td>
+                    <td>{{ pessoa.email }}</td>
+                    <td>{{ pessoa.temFilhos }}</td>
+                    <td>{{ pessoa.quantFilhos }}</td>
+                    <td jhiTranslate="{{ 'projetoBaseChronusGatewayApp.Genero.' + pessoa.genero }}">{{ pessoa.genero }}</td>
+                    <td jhiTranslate="{{ 'projetoBaseChronusGatewayApp.EstadoCivil.' + pessoa.estadoCivil }}">{{ pessoa.estadoCivil }}</td>
+                    <td>{{ pessoa.dataExpiracao | date:'mediumDate' }}</td>
+                    <td>
+                        <div *ngIf="pessoa.enderecoId">
+                            <a [routerLink]="['/endereco', pessoa.enderecoId , 'view']" >{{ pessoa.enderecoId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="pessoa.racaId">
+                            <a [routerLink]="['/raca', pessoa.racaId , 'view']" >{{ pessoa.racaId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="pessoa.tipoSanguineoId">
+                            <a [routerLink]="['/tipo-sanguineo', pessoa.tipoSanguineoId , 'view']" >{{ pessoa.tipoSanguineoId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="pessoa.classificacaoUsuarioId">
+                            <a [routerLink]="['/classificacao-usuario', pessoa.classificacaoUsuarioId , 'view']" >{{ pessoa.classificacaoUsuarioId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/pessoa', pessoa.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/pessoa', pessoa.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(pessoa)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="pessoas && pessoas.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

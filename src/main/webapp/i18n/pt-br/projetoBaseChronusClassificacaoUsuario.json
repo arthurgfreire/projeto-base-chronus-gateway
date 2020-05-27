@@ -1,0 +1,27 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusClassificacaoUsuario": {
+      "home": {
+        "title": "Classificacao Usuarios",
+        "createLabel": "Criar novo Classificacao Usuario",
+        "createOrEditLabel": "Criar ou editar Classificacao Usuario",
+        "notFound": "Nenhum Classificacao Usuario encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Classificacao Usuario {{ id }}?"
+      },
+      "detail": {
+        "title": "Classificacao Usuario"
+      },
+      "descricao": "Descricao",
+      "cor": "Cor"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusClassificacaoUsuario": {
+      "created": "Um novo Classificacao Usuario foi criado com o identificador {{ param }}",
+      "updated": "Um Classificacao Usuario foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Classificacao Usuario foi excluído com o identificador {{ param }}"
+    }
+  }
+}

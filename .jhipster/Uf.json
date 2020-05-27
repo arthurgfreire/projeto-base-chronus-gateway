@@ -1,0 +1,31 @@
+{
+  "name": "Uf",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "Pais",
+      "otherEntityRelationshipName": "Uf",
+      "relationshipValidateRules": "required",
+      "relationshipName": "pais",
+      "otherEntityField": "id"
+    }
+  ],
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "icid_uf",
+  "databaseType": "mongodb",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "pagination",
+  "clientRootFolder": "projetoBaseChronus",
+  "applications": ["projetoBaseChronus"],
+  "microserviceName": "projetoBaseChronus",
+  "fluentMethods": false
+}

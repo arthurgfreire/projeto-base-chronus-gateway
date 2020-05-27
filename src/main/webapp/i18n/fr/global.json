@@ -7,6 +7,18 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
+        "projetoBaseChronusPais": "Pais",
+        "projetoBaseChronusUf": "Uf",
+        "projetoBaseChronusCidade": "Cidade",
+        "projetoBaseChronusClassificacaoUsuario": "Classificacao Usuario",
+        "projetoBaseChronusEndereco": "Endereco",
+        "projetoBaseChronusUnidadeAtendimento": "Unidade Atendimento",
+        "projetoBaseChronusEntidade": "Entidade",
+        "projetoBaseChronusRaca": "Raca",
+        "projetoBaseChronusTipoSanguineo": "Tipo Sanguineo",
+        "projetoBaseChronusPessoa": "Pessoa",
+        "projetoBaseChronusTipoUsuario": "Tipo Usuario",
+        "projetoBaseChronusTipUsuPessoaEntid": "Tip Usu Pessoa Entid",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,45 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusPessoa": {
+      "home": {
+        "title": "Pessoas",
+        "createLabel": "Criar novo Pessoa",
+        "createOrEditLabel": "Criar ou editar Pessoa",
+        "notFound": "Nenhum Pessoa encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Pessoa {{ id }}?"
+      },
+      "detail": {
+        "title": "Pessoa"
+      },
+      "foto": "Foto",
+      "nome": "Nome",
+      "cpf": "Cpf",
+      "rg": "Rg",
+      "cnh": "Cnh",
+      "passaporte": "Passaporte",
+      "certidaoNascimento": "Certidao Nascimento",
+      "estrangeiro": "Estrangeiro",
+      "MoraOutrasPessoas": "Mora Outras Pessoas",
+      "telefone": "Telefone",
+      "email": "Email",
+      "temFilhos": "Tem Filhos",
+      "quantFilhos": "Quant Filhos",
+      "genero": "Genero",
+      "estadoCivil": "Estado Civil",
+      "dataExpiracao": "Data Expiracao",
+      "endereco": "Endereco",
+      "raca": "Raca",
+      "tipoSanguineo": "Tipo Sanguineo",
+      "classificacaoUsuario": "Classificacao Usuario"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusPessoa": {
+      "created": "Um novo Pessoa foi criado com o identificador {{ param }}",
+      "updated": "Um Pessoa foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Pessoa foi excluído com o identificador {{ param }}"
+    }
+  }
+}

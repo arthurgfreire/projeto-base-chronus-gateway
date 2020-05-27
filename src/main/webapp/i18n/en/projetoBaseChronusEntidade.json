@@ -1,0 +1,38 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusEntidade": {
+      "home": {
+        "title": "Entidades",
+        "createLabel": "Create a new Entidade",
+        "createOrEditLabel": "Create or edit a Entidade",
+        "notFound": "No Entidades found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Entidade {{ id }}?"
+      },
+      "detail": {
+        "title": "Entidade"
+      },
+      "tipoCadastro": "Tipo Cadastro",
+      "tipoUnidade": "Tipo Unidade",
+      "razaoSocial": "Razao Social",
+      "nomeFantasia": "Nome Fantasia",
+      "cnpj": "Cnpj",
+      "inscricaoEstadual": "Inscricao Estadual",
+      "inscricaoMunicipal": "Inscricao Municipal",
+      "telefone": "Telefone",
+      "email": "Email",
+      "tipoLicneca": "Tipo Licneca",
+      "quantLicencas": "Quant Licencas",
+      "endereco": "Endereco",
+      "unidadeAtendimento": "Unidade Atendimento"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusEntidade": {
+      "created": "A new Entidade is created with identifier {{ param }}",
+      "updated": "A Entidade is updated with identifier {{ param }}",
+      "deleted": "A Entidade is deleted with identifier {{ param }}"
+    }
+  }
+}

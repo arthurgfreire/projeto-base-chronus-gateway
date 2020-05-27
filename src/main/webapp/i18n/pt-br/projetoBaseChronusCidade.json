@@ -1,0 +1,27 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusCidade": {
+      "home": {
+        "title": "Cidades",
+        "createLabel": "Criar novo Cidade",
+        "createOrEditLabel": "Criar ou editar Cidade",
+        "notFound": "Nenhum Cidade encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Cidade {{ id }}?"
+      },
+      "detail": {
+        "title": "Cidade"
+      },
+      "descricao": "Descricao",
+      "uf": "Uf"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusCidade": {
+      "created": "Um novo Cidade foi criado com o identificador {{ param }}",
+      "updated": "Um Cidade foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Cidade foi excluído com o identificador {{ param }}"
+    }
+  }
+}

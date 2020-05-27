@@ -1,0 +1,10 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "TipoCadastro": {
+      "null": "",
+      "GOVERNO": "GOVERNO",
+      "ENTIDADE_MEDICA": "ENTIDADE_MEDICA",
+      "EMPRESA_NAO_MEDICA": "EMPRESA_NAO_MEDICA"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "TipoSanguineo",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    }
+  ],
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "icid_tipo_sanguineo",
+  "databaseType": "mongodb",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "pagination",
+  "clientRootFolder": "projetoBaseChronus",
+  "applications": ["projetoBaseChronus"],
+  "microserviceName": "projetoBaseChronus",
+  "fluentMethods": false
+}

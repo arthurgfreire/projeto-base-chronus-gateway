@@ -1,0 +1,89 @@
+{
+  "name": "Entidade",
+  "fields": [
+    {
+      "fieldName": "tipoCadastro",
+      "fieldType": "TipoCadastro",
+      "fieldValues": "GOVERNO,ENTIDADE_MEDICA,EMPRESA_NAO_MEDICA",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tipoUnidade",
+      "fieldType": "TipoUnidade",
+      "fieldValues": "PUBLICA,PRIVADA",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "razaoSocial",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nomeFantasia",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cnpj",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "inscricaoEstadual",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "inscricaoMunicipal",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefone",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern", "required"],
+      "fieldValidateRulesPattern": "(\\(?\\d{3}\\)?\\s)?(\\d{4,5}\\-\\d{4})"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"],
+      "fieldValidateRulesPattern": "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
+    },
+    {
+      "fieldName": "tipoLicneca",
+      "fieldType": "TipoLicneca",
+      "fieldValues": "GOV,PRIVADA,SCANNER",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "quantLicencas",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "Endereco",
+      "otherEntityRelationshipName": "Entidade",
+      "relationshipValidateRules": "required",
+      "relationshipName": "endereco",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipName": "unidadeAtendimento",
+      "otherEntityName": "UnidadeAtendimento",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "Entidade"
+    }
+  ],
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "icid_entidade",
+  "databaseType": "mongodb",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination",
+  "clientRootFolder": "projetoBaseChronus",
+  "applications": ["projetoBaseChronus"],
+  "microserviceName": "projetoBaseChronus",
+  "fluentMethods": false
+}

@@ -1,0 +1,119 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pessoa">
+            <h2><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.detail.title">Pessoa</span> {{ pessoa.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.foto">Foto</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.foto">
+                        <a (click)="openFile(pessoa.fotoContentType, pessoa.foto)">
+                            <img [src]="'data:' + pessoa.fotoContentType + ';base64,' + pessoa.foto" style="max-width: 100%;" alt="pessoa image"/>
+                        </a>
+                        {{ pessoa.fotoContentType }}, {{ byteSize(pessoa.foto) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ pessoa.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.cpf">Cpf</span></dt>
+                <dd>
+                    <span>{{ pessoa.cpf }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.rg">Rg</span></dt>
+                <dd>
+                    <span>{{ pessoa.rg }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.cnh">Cnh</span></dt>
+                <dd>
+                    <span>{{ pessoa.cnh }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.passaporte">Passaporte</span></dt>
+                <dd>
+                    <span>{{ pessoa.passaporte }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.certidaoNascimento">Certidao Nascimento</span></dt>
+                <dd>
+                    <span>{{ pessoa.certidaoNascimento }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.estrangeiro">Estrangeiro</span></dt>
+                <dd>
+                    <span>{{ pessoa.estrangeiro }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.MoraOutrasPessoas">Mora Outras Pessoas</span></dt>
+                <dd>
+                    <span>{{ pessoa.MoraOutrasPessoas }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.telefone">Telefone</span></dt>
+                <dd>
+                    <span>{{ pessoa.telefone }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.email">Email</span></dt>
+                <dd>
+                    <span>{{ pessoa.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.temFilhos">Tem Filhos</span></dt>
+                <dd>
+                    <span>{{ pessoa.temFilhos }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.quantFilhos">Quant Filhos</span></dt>
+                <dd>
+                    <span>{{ pessoa.quantFilhos }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.genero">Genero</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'projetoBaseChronusGatewayApp.Genero.' + pessoa.genero }}">{{ pessoa.genero }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.estadoCivil">Estado Civil</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'projetoBaseChronusGatewayApp.EstadoCivil.' + pessoa.estadoCivil }}">{{ pessoa.estadoCivil }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.dataExpiracao">Data Expiracao</span></dt>
+                <dd>
+                    <span>{{ pessoa.dataExpiracao }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.endereco">Endereco</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.enderecoId">
+                        <a [routerLink]="['/endereco', pessoa.enderecoId, 'view']">{{ pessoa.enderecoId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.raca">Raca</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.racaId">
+                        <a [routerLink]="['/raca', pessoa.racaId, 'view']">{{ pessoa.racaId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.tipoSanguineo">Tipo Sanguineo</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.tipoSanguineoId">
+                        <a [routerLink]="['/tipo-sanguineo', pessoa.tipoSanguineoId, 'view']">{{ pessoa.tipoSanguineoId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusPessoa.classificacaoUsuario">Classificacao Usuario</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.classificacaoUsuarioId">
+                        <a [routerLink]="['/classificacao-usuario', pessoa.classificacaoUsuarioId, 'view']">{{ pessoa.classificacaoUsuarioId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pessoa', pessoa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

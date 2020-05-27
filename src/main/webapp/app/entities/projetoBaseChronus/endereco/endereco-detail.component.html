@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="endereco">
+            <h2><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEndereco.detail.title">Endereco</span> {{ endereco.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEndereco.bairro">Bairro</span></dt>
+                <dd>
+                    <span>{{ endereco.bairro }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEndereco.rua">Rua</span></dt>
+                <dd>
+                    <span>{{ endereco.rua }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEndereco.numero">Numero</span></dt>
+                <dd>
+                    <span>{{ endereco.numero }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEndereco.cep">Cep</span></dt>
+                <dd>
+                    <span>{{ endereco.cep }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEndereco.pais">Pais</span></dt>
+                <dd>
+                    <div *ngIf="endereco.paisId">
+                        <a [routerLink]="['/pais', endereco.paisId, 'view']">{{ endereco.paisId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEndereco.uf">Uf</span></dt>
+                <dd>
+                    <div *ngIf="endereco.ufId">
+                        <a [routerLink]="['/uf', endereco.ufId, 'view']">{{ endereco.ufId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoBaseChronusGatewayApp.projetoBaseChronusEndereco.cidade">Cidade</span></dt>
+                <dd>
+                    <div *ngIf="endereco.cidadeId">
+                        <a [routerLink]="['/cidade', endereco.cidadeId, 'view']">{{ endereco.cidadeId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/endereco', endereco.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

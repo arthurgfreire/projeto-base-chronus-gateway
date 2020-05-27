@@ -1,0 +1,61 @@
+{
+  "name": "Endereco",
+  "fields": [
+    {
+      "fieldName": "bairro",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "rua",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numero",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cep",
+      "fieldType": "String",
+      "fieldValidateRulesPattern": "(\\d{5}\\-\\d{3})"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "Pais",
+      "otherEntityRelationshipName": "Pessoa",
+      "relationshipValidateRules": "required",
+      "relationshipName": "pais",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "Uf",
+      "otherEntityRelationshipName": "Pessoa",
+      "relationshipValidateRules": "required",
+      "relationshipName": "uf",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "Cidade",
+      "otherEntityRelationshipName": "Pessoa",
+      "relationshipValidateRules": "required",
+      "relationshipName": "cidade",
+      "otherEntityField": "id"
+    }
+  ],
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "icid_endereco",
+  "databaseType": "mongodb",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination",
+  "clientRootFolder": "projetoBaseChronus",
+  "applications": ["projetoBaseChronus"],
+  "microserviceName": "projetoBaseChronus",
+  "fluentMethods": false
+}

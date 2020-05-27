@@ -1,0 +1,126 @@
+{
+  "name": "Pessoa",
+  "fields": [
+    {
+      "fieldName": "foto",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "cpf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rg",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cnh",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "passaporte",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "certidaoNascimento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estrangeiro",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "MoraOutrasPessoas",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "telefone",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern", "required"],
+      "fieldValidateRulesPattern": "(\\(?\\d{3}\\)?\\s)?(\\d{4,5}\\-\\d{4})"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"],
+      "fieldValidateRulesPattern": "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
+    },
+    {
+      "fieldName": "temFilhos",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "quantFilhos",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "genero",
+      "fieldType": "Genero",
+      "fieldValues": "HOMEM,MULHER,OUTROS",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "estadoCivil",
+      "fieldType": "EstadoCivil",
+      "fieldValues": "CASADO,SOLTEIRO,OUTROS",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dataExpiracao",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "Endereco",
+      "otherEntityRelationshipName": "Pessoa",
+      "relationshipValidateRules": "required",
+      "relationshipName": "endereco",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "Raca",
+      "otherEntityRelationshipName": "Pessoa",
+      "relationshipValidateRules": "required",
+      "relationshipName": "raca",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "TipoSanguineo",
+      "otherEntityRelationshipName": "Pessoa",
+      "relationshipName": "tipoSanguineo",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ClassificacaoUsuario",
+      "otherEntityRelationshipName": "Pessoa",
+      "relationshipName": "classificacaoUsuario",
+      "otherEntityField": "id"
+    }
+  ],
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "icid_pessoa",
+  "databaseType": "mongodb",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination",
+  "clientRootFolder": "projetoBaseChronus",
+  "applications": ["projetoBaseChronus"],
+  "microserviceName": "projetoBaseChronus",
+  "fluentMethods": false
+}

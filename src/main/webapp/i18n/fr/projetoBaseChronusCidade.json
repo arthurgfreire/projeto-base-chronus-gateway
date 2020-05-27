@@ -1,0 +1,27 @@
+{
+  "projetoBaseChronusGatewayApp": {
+    "projetoBaseChronusCidade": {
+      "home": {
+        "title": "Cidades",
+        "createLabel": "Créer un nouveau Cidade",
+        "createOrEditLabel": "Créer ou éditer un Cidade",
+        "notFound": "Aucun Cidade trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Cidade {{ id }} ?"
+      },
+      "detail": {
+        "title": "Cidade"
+      },
+      "descricao": "Descricao",
+      "uf": "Uf"
+    }
+  },
+  "projetoBaseChronusApp": {
+    "projetoBaseChronusCidade": {
+      "created": "Un nouveau Cidade a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Cidade avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Cidade avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}
